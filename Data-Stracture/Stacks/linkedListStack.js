@@ -31,7 +31,9 @@ class Stack {
     if (!this.top) {
       return null;
     }
-
+    if (this.top === this.bottom) {
+      this.bottom = null;
+    }
     const holdingPointer = this.top;
     this.top = this.top.next;
     this.length--;
@@ -42,8 +44,8 @@ class Stack {
 const myStack = new Stack();
 
 myStack.push("Google");
-myStack.push("Udemy");
-myStack.push("LinkedIn");
+// myStack.push("Udemy");
+// myStack.push("LinkedIn");
 myStack.pop();
 console.log(myStack.peek());
 
